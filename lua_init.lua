@@ -101,7 +101,6 @@ require("lazy").setup({
     "brenoprata10/nvim-highlight-colors",   -- Color previews
     "folke/which-key.nvim",                 -- Pop-up for custom keybinds
     "lukas-reineke/indent-blankline.nvim",  -- Indentation lines
-    "mg979/vim-visual-multi",               -- Multi-cursor editing
     "nvim-tree/nvim-web-devicons",          -- Icon pack
     "stevearc/oil.nvim",                    -- File browser in buffer
     "tomasiser/vim-code-dark",              -- VS Code theme
