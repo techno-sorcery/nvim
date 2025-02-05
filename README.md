@@ -1,3 +1,5 @@
+![Example photo of my config](example.png)
+
 ### Background
 ---
 The ethos I had in mind when writing this configuration was to extend Neovim's functionality
