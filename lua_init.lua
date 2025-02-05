@@ -87,7 +87,6 @@ require("lazy").setup({
     "hrsh7th/cmp-path",                 -- Filepath autocomplete source
     "hrsh7th/nvim-cmp",
     "onsails/lspkind.nvim",
-    "petertriho/nvim-scrollbar",        -- Status scrollbar
     "saadparwaiz1/cmp_luasnip",         -- LuaSnip autocomplete source
 
     -- Snippets
@@ -110,6 +109,7 @@ require("lazy").setup({
     "tpope/vim-surround",                   -- Change parentheses/quotes/etc
     "vim-airline/vim-airline",              -- Improved status bar
     "windwp/nvim-autopairs",                -- Pair parentheses and brackets
+    "petertriho/nvim-scrollbar",        -- Status scrollbar
 
     -- AutoSession
     {
