@@ -40,9 +40,9 @@ vim.opt.formatoptions = "o"
 
 -- Keybinds
 vim.keymap.set("c", "<cr>", function()
-  if vim.fn.pumvisible() == 1 then return '<c-y>' end
-  return '<cr>'
-  end, { expr = true })
+    if vim.fn.pumvisible() == 1 then return '<c-y>' end
+    return '<cr>'
+end, { expr = true })
 
 
 -- Matchparen
@@ -80,18 +80,18 @@ require("lazy").setup({
     "williamboman/mason.nvim",
 
     -- Autocomplete
-    "f3fora/cmp-spell",                 -- Spell suggestion autocomplete source
-    "hrsh7th/cmp-buffer",               -- Buffer autocomplete source
-    "hrsh7th/cmp-calc",                 -- Calculator autocomplete source
-    "hrsh7th/cmp-nvim-lsp",             -- LSP autocomplete source
-    "hrsh7th/cmp-path",                 -- Filepath autocomplete source
+    "f3fora/cmp-spell",                     -- Spell suggestion autocomplete source
+    "hrsh7th/cmp-buffer",                   -- Buffer autocomplete source
+    "hrsh7th/cmp-calc",                     -- Calculator autocomplete source
+    "hrsh7th/cmp-nvim-lsp",                 -- LSP autocomplete source
+    "hrsh7th/cmp-path",                     -- Filepath autocomplete source
     "hrsh7th/nvim-cmp",
     "onsails/lspkind.nvim",
-    "saadparwaiz1/cmp_luasnip",         -- LuaSnip autocomplete source
+    "saadparwaiz1/cmp_luasnip",             -- LuaSnip autocomplete source
 
     -- Snippets
-    "L3MON4D3/LuaSnip",                 -- Snippet plugin
-    "rafamadriz/friendly-snippets",     -- Snippets for common languages
+    "L3MON4D3/LuaSnip",                     -- Snippet plugin
+    "rafamadriz/friendly-snippets",         -- Snippets for common languages
 
     -- Git
     "lewis6991/gitsigns.nvim",              -- Git decorations
@@ -100,30 +100,33 @@ require("lazy").setup({
     -- Misc
     "brenoprata10/nvim-highlight-colors",   -- Color previews
     "folke/which-key.nvim",                 -- Pop-up for custom keybinds
+    "junegunn/fzf.vim",                     -- Fuzzy finding
     "lukas-reineke/indent-blankline.nvim",  -- Indentation lines
     "nvim-tree/nvim-web-devicons",          -- Icon pack
+    "petertriho/nvim-scrollbar",            -- Status scrollbar
     "stevearc/oil.nvim",                    -- File browser in buffer
     "tomasiser/vim-code-dark",              -- VS Code theme
     "tpope/vim-commentary",                 -- Selection commenting
     "tpope/vim-surround",                   -- Change parentheses/quotes/etc
     "vim-airline/vim-airline",              -- Improved status bar
     "windwp/nvim-autopairs",                -- Pair parentheses and brackets
-    "petertriho/nvim-scrollbar",        -- Status scrollbar
 
-    -- AutoSession
+    -- Sessionizer
     {
-        'rmagatti/auto-session',
-        lazy = false,
-
-        ---enables autocomplete for opts
-        ---@module "auto-session"
-        ---@type AutoSession.Config
-        opts = {
-            suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
-            -- log_level = 'debug',
+        "xolox/vim-session",
+        dependencies = {
+            "xolox/vim-misc",
         }
-    }
+
+    },
 })
+
+
+-- Config vim-session
+vim.g['session_directory'] = '~/.cache/nvim/sessions'    -- Session directory
+vim.g['session_autosave'] = 'no'                         -- Don't autosave sessions
+vim.g['session_default_to_last'] = 1
+vim.g['session_command_aliases'] = 1
 
 
 -- Set up gitsigns
@@ -334,5 +337,13 @@ vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link='CmpItemKindKeyword' })
 
 
 -- Set up scrollbar
-require("scrollbar").setup()
-require("scrollbar.handlers.gitsigns").setup()
+require("scrollbar").setup({
+    handlers = {
+        cursor = true,
+        diagnostic = true,
+        gitsigns = true, -- Requires gitsigns
+        handle = true,
+        search = false, -- Requires hlslens
+        ale = false, -- Requires ALE
+    },
+})
