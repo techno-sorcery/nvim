@@ -1,10 +1,8 @@
 -- Basic config
 
--- vim.opt.termguicolors = true
 vim.opt.number = true                   -- Show line number
 vim.opt.cul = true                      -- Show cursor line
 
--- vim.opt.foldmethod = "indent"           -- Fold matching indent levels
 vim.opt.lazyredraw = true               -- Wait to redraw screen
 vim.cmd [[colorscheme cool]]            -- Set theme to custom
 
@@ -24,18 +22,20 @@ vim.opt.hlsearch = true                 -- Automatically highlight
 vim.opt.showcmd = true                  -- Show last command on status
 vim.opt.showmode = true                 -- Show current mode on status
 
-vim.opt.dir = "/home/" .. os.getenv("USER") .. "/.cache/nvim"           -- Set swapfile directory
-vim.opt.bdir = "/home/".. os.getenv("USER") .."/.cache/nvim"          -- Set backup file directory
+vim.opt.dir = "/home/" .. os.getenv("USER") .. "/.cache/nvim"       -- Set swapfile directory
+vim.opt.bdir = "/home/".. os.getenv("USER") .."/.cache/nvim"        -- Set backup file directory
 
 vim.opt.history = 500                   -- Remember 500 last commands
 vim.opt.scrolloff = 10                  -- Lines to pad cursor
 
 vim.opt.undofile = true                 -- Save undo history to file
-vim.opt.undodir = "/home/".. os.getenv("USER") .."/.cache/nvim"       -- Set undo file directory
+vim.opt.undodir = "/home/".. os.getenv("USER") .."/.cache/nvim"     -- Set undo file directory
 
 vim.opt.formatoptions = "c"
 vim.opt.formatoptions = "r"
 vim.opt.formatoptions = "o"
+
+vim.opt.equalalways = false             -- Preserve buffer sizes after resize
 
 
 -- Keybinds
@@ -51,8 +51,8 @@ vim.g['matchparen_insert_timeout'] = 10
 
 
 -- Vim airline
-vim.g['airline_powerline_fonts'] = 1                -- Use powerline fonts
-vim.g['airline_theme'] = "codedark"                 -- Use VSCode dark theme
+vim.g['airline_powerline_fonts'] = 1        -- Use powerline fonts
+vim.g['airline_theme'] = "codedark"         -- Use VSCode dark theme
 
 
 -- Bootstrap lazy
