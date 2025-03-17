@@ -17,8 +17,8 @@ augroup numbertoggle
 nnoremap <Space> <NOP>
 let mapleader =" "      " Set leader to spacebar
 " map <leader>g :Goyo \| set spell \| set linebreak<CR>
-" map <leader>z : silent execute '!zathura %:r.pdf & '
-" map <leader>m : silent! execute "!pandoc -s -o %:r.tex % &" <bar> : execute "!pdflatex %:r.tex >/dev/null 2>&1" 
+map <leader>v : silent execute '!zathura %:r.pdf &' <cr>
+map <leader>m : silent! execute "!pandoc -s -o %:r.pdf % &" <cr>
 
 " autocmd! User GoyoLeave nested | colorscheme cool | set nospell
-" autocmd BufWritePost *.tex silent! execute "!pdflatex % >/dev/null 2>&1" | redraw!
+autocmd BufWritePost *.tex silent! execute "!pdflatex % >/dev/null 2>&1" | redraw!
