@@ -123,7 +123,7 @@ require("lazy").setup({
 
 
 -- Config vim-session
-vim.g['session_directory'] = '~/.cache/nvim/sessions'    -- Session directory
+vim.g['session_directory'] = '~/.local/share/nvim/sessions'    -- Session directory
 vim.g['session_autosave'] = 'no'                         -- Don't autosave sessions
 vim.g['session_default_to_last'] = 1
 vim.g['session_command_aliases'] = 1
